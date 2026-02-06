@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            background-color: #d93025;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .content {
+            padding: 40px 30px;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        /* Box Layout Split */
+        .info-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .info-box {
+            flex: 1;
+            background-color: #fff8f8;
+            border: 1px solid #f5c6cb;
+            border-radius: 6px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .info-label {
+            display: block;
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-value {
+            display: block;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .invoice-box {
+            background-color: #ffffff;
+            border: 1px solid #f5c6cb;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .amount {
+            font-size: 28px;
+            color: #d93025;
+            font-weight: bold;
+            margin-top: 10px;
+            text-align: right;
+        }
+
+        .interest-note {
+            font-size: 12px;
+            color: #d93025;
+            text-align: right;
+            margin-top: 5px;
+        }
+
+        /* Table Styles */
+        .items-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .items-table th {
+            text-align: left;
+            color: #666;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        .items-table td {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .items-table td.price {
+            text-align: right;
+            font-weight: 500;
+        }
+
+        /* Button Styles */
+        .btn-container {
+            text-align: center;
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: #d93025;
+            color: #ffffff !important;
+            box-shadow: 0 2px 4px rgba(217, 48, 37, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #b3261c;
+        }
+
+        .btn-secondary {
+            background-color: #ffffff;
+            color: #d93025 !important;
+            border: 1px solid #d93025;
+        }
+
+        .btn-secondary:hover {
+            background-color: #fff8f8;
+        }
+
+        .footer {
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #888888;
+            border-top: 1px solid #e0e0e0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 style="margin:0;">AuroraPay</h1>
+        </div>
+        <div class="content">
+            <h2 style="margin-top:0;">Olá, {{ nome }}</h2>
+            <p>Sua fatura consta em atraso há <strong>{{ dias_atraso }} dias</strong>.</p>
+
+            <div class="info-row">
+                <div class="info-box">
+                    <span class="info-label">Fatura</span>
+                    <span class="info-value">#{{ invoice_id }}</span>
+                </div>
+                <div class="info-box">
+                    <span class="info-label">Vencimento Original</span>
+                    <span class="info-value">{{ vencimento }}</span>
+                </div>
+            </div>
+
+            <div class="invoice-box">
+                <div style="margin-bottom: 10px; font-weight: bold; color: #555;">Detalhamento:</div>
+                {{ items_table }}
+
+                <hr style="border: 0; border-top: 1px solid #f5c6cb; margin: 15px 0;">
+
+                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                    <span style="font-size: 16px; font-weight: bold; margin-top: 15px;">Total Atualizado:</span>
+                    <div>
+                        <div class="amount">{{ valor }}</div>
+                        <div class="interest-note">+ Juros/Multa aplicados</div>
+                    </div>
+                </div>
+            </div>
+
+            <p>Evite restrições no serviço. Regularize sua pendência.</p>
+
+            <div class="btn-container">
+                <a href="{{ link_boleto }}" class="btn btn-primary">PAGAR AGORA</a>
+                <a href="http://negociar.fatura.com/{{ invoice_id }}" class="btn btn-secondary">DESEJO NEGOCIAR</a>
+            </div>
+        </div>
+        <div class="footer">
+            <p>AuroraPay Serviços Digitais<br>
+                Caso já tenha pago, desconsidere este e-mail.</p>
+        </div>
+    </div>
+</body>
+
+</html>

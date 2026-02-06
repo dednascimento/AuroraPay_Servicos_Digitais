@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            background-color: #1a73e8;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .content {
+            padding: 40px 30px;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        /* Box Layout Split */
+        .info-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .info-box {
+            flex: 1;
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .info-label {
+            display: block;
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-value {
+            display: block;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .invoice-box {
+            background-color: #ffffff;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .amount {
+            font-size: 28px;
+            color: #1a73e8;
+            font-weight: bold;
+            margin-top: 10px;
+            text-align: right;
+        }
+
+        /* Table Styles */
+        .items-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .items-table th {
+            text-align: left;
+            color: #666;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        .items-table td {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .items-table td.price {
+            text-align: right;
+            font-weight: 500;
+        }
+
+        /* Button Styles - High Contrast */
+        .btn-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #1a73e8;
+            color: #ffffff !important;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 2px 4px rgba(26, 115, 232, 0.3);
+        }
+
+        .btn:hover {
+            background-color: #1557b0;
+        }
+
+        .footer {
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #888888;
+            border-top: 1px solid #e0e0e0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 style="margin:0;">AuroraPay</h1>
+        </div>
+        <div class="content">
+            <h2 style="margin-top:0;">Olá, {{ nome }}!</h2>
+            <p>Sua fatura <strong>vence hoje</strong>!</p>
+
+            <div class="info-row">
+                <div class="info-box">
+                    <span class="info-label">Fatura</span>
+                    <span class="info-value">#{{ invoice_id }}</span>
+                </div>
+                <div class="info-box">
+                    <span class="info-label">Vencimento</span>
+                    <span class="info-value">{{ vencimento }}</span>
+                </div>
+            </div>
+
+            <div class="invoice-box">
+                <div style="margin-bottom: 10px; font-weight: bold; color: #555;">Detalhamento:</div>
+                {{ items_table }}
+
+                <hr style="border: 0; border-top: 1px solid #e9ecef; margin: 15px 0;">
+
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 16px; font-weight: bold;">Total a Pagar:</span>
+                    <span class="amount">{{ valor }}</span>
+                </div>
+            </div>
+
+            <div class="btn-container">
+                <a href="{{ link_boleto }}" class="btn">PAGAR AGORA</a>
+            </div>
+
+            <p style="margin-top: 30px; font-size: 14px; color: #666;">Caso já tenha efetuado o pagamento, por favor
+                desconsidere este aviso.</p>
+        </div>
+        <div class="footer">
+            <p>AuroraPay Serviços Digitais<br>
+                Este é um e-mail automático, por favor não responda.</p>
+        </div>
+    </div>
+</body>
+
+</html>

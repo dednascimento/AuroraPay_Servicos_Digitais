@@ -1,0 +1,93 @@
+[2026-02-06T00:07:02.282485] [ExcelAdapter] File: C:\Users\deivi\OneDrive\Área de Trabalho\AuroraPay Serviços Digitais\data\input\Regua_Cobranca_Inteligente_Template.xlsx
+[2026-02-06T00:07:02.283489] [ExcelAdapter] Shape: (2, 13)
+[2026-02-06T00:07:02.283489] [ExcelAdapter] Columns: ['cliente_id', 'nome_cliente', 'email', 'telefone', 'cpf_cnpj', 'endereco', 'numero_nf', 'data_emissao', 'data_vencimento', 'valor_fatura', 'descricao_servico', 'status_sistema', 'aceita_comunicacao']
+[2026-02-06T00:07:02.287975] [ExcelAdapter] Row 0: {'cliente_id': 'REAL_01', 'nome_cliente': 'Deivid (Corp)', 'email': 'deividnascimento.corporativo@gmail.com', 'telefone': 11999999999, 'cpf_cnpj': '00.000.000/0001-00', 'endereco': 'Av. Paulista, 1000', 'numero_nf': 'NF-1001', 'data_emissao': Timestamp('2026-01-16 00:00:00'), 'data_vencimento': Timestamp('2026-02-05 00:00:00'), 'valor_fatura': 1250.0, 'descricao_servico': 'Consultoria de Software', 'status_sistema': 'ABERTO', 'aceita_comunicacao': True}
+[2026-02-06T00:07:02.295454] [ExcelAdapter] Row 1: {'cliente_id': 'REAL_02', 'nome_cliente': 'ACS Legendados', 'email': 'acslegendados16@gmail.com', 'telefone': 11988888888, 'cpf_cnpj': '11.111.111/0001-11', 'endereco': 'Rua Clássica, 50', 'numero_nf': 'NF-1002', 'data_emissao': Timestamp('2026-01-26 00:00:00'), 'data_vencimento': Timestamp('2026-02-10 00:00:00'), 'valor_fatura': 75.9, 'descricao_servico': 'Assinatura Mensal', 'status_sistema': 'A VENCER', 'aceita_comunicacao': True}
+[2026-02-06T00:07:02.296500] [BillingManager] Vencimento: 2026-02-05 | Hoje: 2026-02-06 | Delta: 1 dias
+[2026-02-06T00:07:02.296500] [BillingManager] Vencimento: 2026-02-10 | Hoje: 2026-02-06 | Delta: -4 dias
+[2026-02-06T00:07:46.561652] [ExcelAdapter] File: C:\Users\deivi\OneDrive\Área de Trabalho\AuroraPay Serviços Digitais\data\input\Regua_Cobranca_Inteligente_Template.xlsx
+[2026-02-06T00:07:46.561652] [ExcelAdapter] Shape: (2, 13)
+[2026-02-06T00:07:46.562666] [ExcelAdapter] Columns: ['cliente_id', 'nome_cliente', 'email', 'telefone', 'cpf_cnpj', 'endereco', 'numero_nf', 'data_emissao', 'data_vencimento', 'valor_fatura', 'descricao_servico', 'status_sistema', 'aceita_comunicacao']
+[2026-02-06T00:07:46.563673] [ExcelAdapter] Row 0: {'cliente_id': 'REAL_01', 'nome_cliente': 'Deivid (Corp)', 'email': 'deividnascimento.corporativo@gmail.com', 'telefone': 11999999999, 'cpf_cnpj': '00.000.000/0001-00', 'endereco': 'Av. Paulista, 1000', 'numero_nf': 'NF-1001', 'data_emissao': Timestamp('2026-01-17 00:00:00'), 'data_vencimento': Timestamp('2026-02-06 00:00:00'), 'valor_fatura': 1250.0, 'descricao_servico': 'Consultoria de Software', 'status_sistema': 'ABERTO', 'aceita_comunicacao': True}
+[2026-02-06T00:07:46.564684] [ExcelAdapter] Row 1: {'cliente_id': 'REAL_02', 'nome_cliente': 'ACS Legendados', 'email': 'acslegendados16@gmail.com', 'telefone': 11988888888, 'cpf_cnpj': '11.111.111/0001-11', 'endereco': 'Rua Clássica, 50', 'numero_nf': 'NF-1002', 'data_emissao': Timestamp('2026-01-27 00:00:00'), 'data_vencimento': Timestamp('2026-02-11 00:00:00'), 'valor_fatura': 75.9, 'descricao_servico': 'Assinatura Mensal', 'status_sistema': 'A VENCER', 'aceita_comunicacao': True}
+[2026-02-06T00:07:46.564684] [BillingManager] Vencimento: 2026-02-06 | Hoje: 2026-02-06 | Delta: 0 dias
+[2026-02-06T00:07:50.308049] [EmailAdapter] SUCESSO envindo para deividnascimento.corporativo@gmail.com | Assunto: Notificação AuroraPay: D0
+[2026-02-06T00:07:50.310220] [BillingManager] Vencimento: 2026-02-11 | Hoje: 2026-02-06 | Delta: -5 dias
+[2026-02-06T00:07:53.681236] [EmailAdapter] SUCESSO envindo para acslegendados16@gmail.com | Assunto: Notificação AuroraPay: D-5
+[2026-02-06T00:08:52.836180] [ExcelAdapter] File: C:\Users\deivi\OneDrive\Área de Trabalho\AuroraPay Serviços Digitais\data\input\Regua_Cobranca_Inteligente_Template.xlsx
+[2026-02-06T00:08:52.837182] [ExcelAdapter] Shape: (2, 13)
+[2026-02-06T00:08:52.838528] [ExcelAdapter] Columns: ['cliente_id', 'nome_cliente', 'email', 'telefone', 'cpf_cnpj', 'endereco', 'numero_nf', 'data_emissao', 'data_vencimento', 'valor_fatura', 'descricao_servico', 'status_sistema', 'aceita_comunicacao']
+[2026-02-06T00:08:52.841749] [ExcelAdapter] Row 0: {'cliente_id': 'REAL_01', 'nome_cliente': 'Deivid (Corp)', 'email': 'deividnascimento.corporativo@gmail.com', 'telefone': 11999999999, 'cpf_cnpj': '00.000.000/0001-00', 'endereco': 'Av. Paulista, 1000', 'numero_nf': 'NF-1001', 'data_emissao': Timestamp('2026-01-17 00:00:00'), 'data_vencimento': Timestamp('2026-02-06 00:00:00'), 'valor_fatura': 1250.0, 'descricao_servico': 'Consultoria de Software', 'status_sistema': 'ABERTO', 'aceita_comunicacao': True}
+[2026-02-06T00:08:52.842907] [ExcelAdapter] Row 1: {'cliente_id': 'REAL_02', 'nome_cliente': 'ACS Legendados', 'email': 'acslegendados16@gmail.com', 'telefone': 11988888888, 'cpf_cnpj': '11.111.111/0001-11', 'endereco': 'Rua Clássica, 50', 'numero_nf': 'NF-1002', 'data_emissao': Timestamp('2026-01-27 00:00:00'), 'data_vencimento': Timestamp('2026-02-11 00:00:00'), 'valor_fatura': 75.9, 'descricao_servico': 'Assinatura Mensal', 'status_sistema': 'A VENCER', 'aceita_comunicacao': True}
+[2026-02-06T00:08:52.843908] [BillingManager] Vencimento: 2026-02-06 | Hoje: 2026-02-06 | Delta: 0 dias
+[2026-02-06T00:08:52.845057] [BillingManager] Vencimento: 2026-02-11 | Hoje: 2026-02-06 | Delta: -5 dias
+[2026-02-06T00:11:04.290663] [ExcelAdapter] File: C:\Users\deivi\OneDrive\Área de Trabalho\AuroraPay Serviços Digitais\data\input\Regua_Cobranca_Inteligente_Template.xlsx
+[2026-02-06T00:11:04.292681] [ExcelAdapter] Shape: (2, 13)
+[2026-02-06T00:11:04.293703] [ExcelAdapter] Columns: ['cliente_id', 'nome_cliente', 'email', 'telefone', 'cpf_cnpj', 'endereco', 'numero_nf', 'data_emissao', 'data_vencimento', 'valor_fatura', 'descricao_servico', 'status_sistema', 'aceita_comunicacao']
+[2026-02-06T00:11:04.300628] [ExcelAdapter] Row 0: {'cliente_id': 'REAL_01', 'nome_cliente': 'Deivid (Corp)', 'email': 'deividnascimento.corporativo@gmail.com', 'telefone': 11999999999, 'cpf_cnpj': '00.000.000/0001-00', 'endereco': 'Av. Paulista, 1000', 'numero_nf': 'NF-1001', 'data_emissao': Timestamp('2026-01-17 00:00:00'), 'data_vencimento': Timestamp('2026-02-06 00:00:00'), 'valor_fatura': 1250.0, 'descricao_servico': 'Consultoria de Software', 'status_sistema': 'ABERTO', 'aceita_comunicacao': True}
+[2026-02-06T00:11:04.302749] [ExcelAdapter] Row 1: {'cliente_id': 'REAL_02', 'nome_cliente': 'ACS Legendados', 'email': 'acslegendados16@gmail.com', 'telefone': 11988888888, 'cpf_cnpj': '11.111.111/0001-11', 'endereco': 'Rua Clássica, 50', 'numero_nf': 'NF-1002', 'data_emissao': Timestamp('2026-01-27 00:00:00'), 'data_vencimento': Timestamp('2026-02-11 00:00:00'), 'valor_fatura': 75.9, 'descricao_servico': 'Assinatura Mensal', 'status_sistema': 'A VENCER', 'aceita_comunicacao': True}
+[2026-02-06T00:11:04.302749] [BillingManager] Vencimento: 2026-02-06 | Hoje: 2026-02-06 | Delta: 0 dias
+[2026-02-06T00:11:04.304774] [BillingManager] Vencimento: 2026-02-11 | Hoje: 2026-02-06 | Delta: -5 dias
+[2026-02-06T00:12:46.445326] [ExcelAdapter] File: C:\Users\deivi\OneDrive\Área de Trabalho\AuroraPay Serviços Digitais\data\input\Regua_Cobranca_Inteligente_Template.xlsx
+[2026-02-06T00:12:46.447434] [ExcelAdapter] Shape: (2, 13)
+[2026-02-06T00:12:46.447434] [ExcelAdapter] Columns: ['cliente_id', 'nome_cliente', 'email', 'telefone', 'cpf_cnpj', 'endereco', 'numero_nf', 'data_emissao', 'data_vencimento', 'valor_fatura', 'descricao_servico', 'status_sistema', 'aceita_comunicacao']
+[2026-02-06T00:12:46.450969] [ExcelAdapter] Row 0: {'cliente_id': 'REAL_01', 'nome_cliente': 'Deivid (Corp)', 'email': 'deividnascimento.corporativo@gmail.com', 'telefone': 11999999999, 'cpf_cnpj': '00.000.000/0001-00', 'endereco': 'Av. Paulista, 1000', 'numero_nf': 'NF-1001', 'data_emissao': Timestamp('2026-01-17 00:00:00'), 'data_vencimento': Timestamp('2026-02-06 00:00:00'), 'valor_fatura': 1250.0, 'descricao_servico': 'Consultoria de Software', 'status_sistema': 'ABERTO', 'aceita_comunicacao': True}
+[2026-02-06T00:12:46.453644] [ExcelAdapter] Row 1: {'cliente_id': 'REAL_02', 'nome_cliente': 'ACS Legendados', 'email': 'acslegendados16@gmail.com', 'telefone': 11988888888, 'cpf_cnpj': '11.111.111/0001-11', 'endereco': 'Rua Clássica, 50', 'numero_nf': 'NF-1002', 'data_emissao': Timestamp('2026-01-27 00:00:00'), 'data_vencimento': Timestamp('2026-02-11 00:00:00'), 'valor_fatura': 75.9, 'descricao_servico': 'Assinatura Mensal', 'status_sistema': 'A VENCER', 'aceita_comunicacao': True}
+[2026-02-06T00:12:46.454646] [BillingManager] Vencimento: 2026-02-06 | Hoje: 2026-02-06 | Delta: 0 dias
+[2026-02-06T00:12:46.454646] [BillingManager] Vencimento: 2026-02-11 | Hoje: 2026-02-06 | Delta: -5 dias
+[2026-02-06T00:14:12.208546] [ExcelAdapter] File: C:\Users\deivi\OneDrive\Área de Trabalho\AuroraPay Serviços Digitais\data\input\Regua_Cobranca_Inteligente_Template.xlsx
+[2026-02-06T00:14:12.209659] [ExcelAdapter] Shape: (2, 13)
+[2026-02-06T00:14:12.209659] [ExcelAdapter] Columns: ['cliente_id', 'nome_cliente', 'email', 'telefone', 'cpf_cnpj', 'endereco', 'numero_nf', 'data_emissao', 'data_vencimento', 'valor_fatura', 'descricao_servico', 'status_sistema', 'aceita_comunicacao']
+[2026-02-06T00:14:12.223173] [ExcelAdapter] Row 0: {'cliente_id': 'REAL_01', 'nome_cliente': 'Deivid (Corp)', 'email': 'deividnascimento.corporativo@gmail.com', 'telefone': 11999999999, 'cpf_cnpj': '00.000.000/0001-00', 'endereco': 'Av. Paulista, 1000', 'numero_nf': 'NF-1001', 'data_emissao': Timestamp('2026-01-17 00:00:00'), 'data_vencimento': Timestamp('2026-02-06 00:00:00'), 'valor_fatura': 1250.0, 'descricao_servico': 'Consultoria de Software', 'status_sistema': 'ABERTO', 'aceita_comunicacao': True}
+[2026-02-06T00:14:12.231997] [ExcelAdapter] Row 1: {'cliente_id': 'REAL_02', 'nome_cliente': 'ACS Legendados', 'email': 'acslegendados16@gmail.com', 'telefone': 11988888888, 'cpf_cnpj': '11.111.111/0001-11', 'endereco': 'Rua Clássica, 50', 'numero_nf': 'NF-1002', 'data_emissao': Timestamp('2026-01-27 00:00:00'), 'data_vencimento': Timestamp('2026-02-11 00:00:00'), 'valor_fatura': 75.9, 'descricao_servico': 'Assinatura Mensal', 'status_sistema': 'A VENCER', 'aceita_comunicacao': True}
+[2026-02-06T00:14:12.234668] [BillingManager] Vencimento: 2026-02-06 | Hoje: 2026-02-06 | Delta: 0 dias
+[2026-02-06T00:14:15.627124] [EmailAdapter] SUCESSO envindo para deividnascimento.corporativo@gmail.com | Assunto: [TESTE] Sua fatura vence hoje!
+[2026-02-06T00:14:15.631646] [BillingManager] Vencimento: 2026-02-11 | Hoje: 2026-02-06 | Delta: -5 dias
+[2026-02-06T00:14:18.784407] [EmailAdapter] SUCESSO envindo para acslegendados16@gmail.com | Assunto: [TESTE] Lembrete: Fatura próxima do vencimento
+[2026-02-06T00:19:45.212932] [ExcelAdapter] Loaded 2 clients, 2 invoices, 4 items
+[2026-02-06T00:19:45.262384] [ExcelAdapter] ERROR: name 'InvoiceItem' is not defined
+[2026-02-06T00:20:21.099673] [ExcelAdapter] Loaded 2 clients, 2 invoices, 4 items
+[2026-02-06T00:20:21.115713] [ExcelAdapter] ERROR: name 'InvoiceItem' is not defined
+[2026-02-06T00:20:54.190749] [ExcelAdapter] Loaded 2 clients, 2 invoices, 4 items
+[2026-02-06T00:20:54.196793] [ExcelAdapter] ERROR: name 'InvoiceItem' is not defined
+[2026-02-06T00:21:20.823624] [ExcelAdapter] Loaded 2 clients, 2 invoices, 4 items
+[2026-02-06T00:21:20.831410] [BillingManager] Vencimento: 2026-02-06 | Hoje: 2026-02-06 | Delta: 0 dias
+[2026-02-06T00:21:24.547256] [EmailAdapter] SUCESSO envindo para deividnascimento.corporativo@gmail.com | Assunto: [TESTE] Sua fatura vence hoje!
+[2026-02-06T00:21:24.549289] [BillingManager] Vencimento: 2026-02-11 | Hoje: 2026-02-06 | Delta: -5 dias
+[2026-02-06T00:21:28.278690] [EmailAdapter] SUCESSO envindo para acslegendados16@gmail.com | Assunto: [TESTE] Lembrete: Fatura próxima do vencimento
+[2026-02-06T00:21:55.645436] [ExcelAdapter] Loaded 2 clients, 2 invoices, 4 items
+[2026-02-06T00:21:55.653035] [BillingManager] Vencimento: 2026-02-06 | Hoje: 2026-02-06 | Delta: 0 dias
+[2026-02-06T00:21:59.592644] [EmailAdapter] SUCESSO envindo para deividnascimento.corporativo@gmail.com | Assunto: [TESTE] Sua fatura vence hoje!
+[2026-02-06T00:21:59.594722] [BillingManager] Vencimento: 2026-02-11 | Hoje: 2026-02-06 | Delta: -5 dias
+[2026-02-06T00:22:03.325372] [EmailAdapter] SUCESSO envindo para acslegendados16@gmail.com | Assunto: [TESTE] Lembrete: Fatura próxima do vencimento
+[2026-02-06T00:31:21.462185] [ExcelAdapter] Loaded 2 clients, 2 invoices, 4 items
+[2026-02-06T00:31:21.486115] [BillingManager] Vencimento: 2026-02-06 | Hoje: 2026-02-06 | Delta: 0 dias
+[2026-02-06T00:31:25.620516] [EmailAdapter] SUCESSO envindo para deividnascimento.corporativo@gmail.com | Assunto: [TESTE] Sua fatura vence hoje!
+[2026-02-06T00:31:25.622519] [BillingManager] Vencimento: 2026-02-11 | Hoje: 2026-02-06 | Delta: -5 dias
+[2026-02-06T00:31:28.778788] [EmailAdapter] SUCESSO envindo para acslegendados16@gmail.com | Assunto: [TESTE] Lembrete: Fatura próxima do vencimento
+[2026-02-06T00:33:31.321253] [ExcelAdapter] Loaded 2 clients, 2 invoices, 4 items
+[2026-02-06T00:33:31.354134] [BillingManager] Vencimento: 2026-02-06 | Hoje: 2026-02-06 | Delta: 0 dias
+[2026-02-06T00:33:35.440096] [EmailAdapter] SUCESSO envindo para deividnascimento.corporativo@gmail.com | Assunto: [TESTE] Sua fatura vence hoje!
+[2026-02-06T00:33:35.441249] [BillingManager] Vencimento: 2026-02-11 | Hoje: 2026-02-06 | Delta: -5 dias
+[2026-02-06T00:36:07.955719] [ExcelAdapter] Loaded 2 clients, 2 invoices, 4 items
+[2026-02-06T00:36:07.966657] [BillingManager] Vencimento: 2026-02-06 | Hoje: 2026-02-06 | Delta: 0 dias
+[2026-02-06T00:36:11.293038] [EmailAdapter] SUCESSO envindo para deividnascimento.corporativo@gmail.com | Assunto: [TESTE] Sua fatura vence hoje!
+[2026-02-06T00:36:11.295052] [BillingManager] Vencimento: 2026-02-11 | Hoje: 2026-02-06 | Delta: -5 dias
+[2026-02-06T00:36:14.468717] [EmailAdapter] SUCESSO envindo para acslegendados16@gmail.com | Assunto: [TESTE] Lembrete: Fatura próxima do vencimento
+[2026-02-06T00:37:47.373834] [ExcelAdapter] Loaded 2 clients, 2 invoices, 4 items
+[2026-02-06T00:37:47.425482] [BillingManager] Vencimento: 2026-02-06 | Hoje: 2026-02-06 | Delta: 0 dias
+[2026-02-06T00:37:51.682085] [EmailAdapter] SUCESSO envindo para deividnascimento.corporativo@gmail.com | Assunto: [TESTE] Sua fatura vence hoje!
+[2026-02-06T00:37:51.683597] [BillingManager] Vencimento: 2026-02-11 | Hoje: 2026-02-06 | Delta: -5 dias
+[2026-02-06T00:38:42.142769] [ExcelAdapter] Loaded 2 clients, 2 invoices, 4 items
+[2026-02-06T00:38:42.148276] [BillingManager] Vencimento: 2026-02-06 | Hoje: 2026-02-06 | Delta: 0 dias
+[2026-02-06T00:38:42.149275] [BillingManager] Vencimento: 2026-02-11 | Hoje: 2026-02-06 | Delta: -5 dias
+[2026-02-06T00:41:10.049145] [ExcelAdapter] Loaded 2 clients, 3 invoices, 6 items
+[2026-02-06T00:41:10.069851] [BillingManager] Vencimento: 2026-02-06 | Hoje: 2026-02-06 | Delta: 0 dias
+[2026-02-06T00:41:10.069851] [BillingManager] Vencimento: 2026-02-11 | Hoje: 2026-02-06 | Delta: -5 dias
+[2026-02-06T00:41:10.070863] [BillingManager] Vencimento: 2026-02-03 | Hoje: 2026-02-06 | Delta: 3 dias
+[2026-02-06T00:41:16.207192] [EmailAdapter] SUCESSO envindo para deividnascimento.corporativo@gmail.com | Assunto: [TESTE] Aviso: Fatura em atraso
+[2026-02-06T00:41:40.269609] [ExcelAdapter] Loaded 2 clients, 3 invoices, 6 items
+[2026-02-06T00:41:40.331747] [BillingManager] Vencimento: 2026-02-06 | Hoje: 2026-02-06 | Delta: 0 dias
+[2026-02-06T00:41:40.331747] [BillingManager] Vencimento: 2026-02-11 | Hoje: 2026-02-06 | Delta: -5 dias
+[2026-02-06T00:41:40.332810] [BillingManager] Vencimento: 2026-02-03 | Hoje: 2026-02-06 | Delta: 3 dias
+[2026-02-06T00:41:43.721670] [EmailAdapter] SUCESSO envindo para deividnascimento.corporativo@gmail.com | Assunto: [TESTE] Aviso: Fatura em atraso
