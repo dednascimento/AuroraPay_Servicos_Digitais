@@ -5,7 +5,7 @@
 Sistema automatizado para envio de faturas e lembretes de cobrança via e-mail, focado em pequenas empresas que utilizam planilhas para gestão financeira.
 
 ## 🎯 Objetivo do Projeto
-Este projeto foi desenvolvido para **Portfólio de um Technical Product Manager | Arquiteto de Soluções**, demonstrando:
+Este projeto foi desenvolvido para **Portfólio de um Technical Product Manager**, demonstrando:
 *   Arquitetura Limpa (Clean Architecture).
 *   Automação de Processos (RPA).
 *   Documentação Técnica Padronizada.
@@ -87,5 +87,5 @@ Acesse a pasta `docs/` para detalhes técnicos:
 Se você busca um sistema de cobrança **escalável, integrado a Gateways de Pagamento (Pix API, Boleto, Cartão)** e com gestão de recorrência, entre em contato. Desenvolvo arquiteturas personalizadas sob medida para o seu negócio.
 
 **Deivid Nascimento**  
-*Arquiteto de Soluções / Desenvolvedor Sênior*  
+*Technical Product Manager | Arquiteto de Soluções | Analista de Requisitos*  
 👉 [Acesse meu LinkedIn](https://www.linkedin.com/in/dednascimento/) | ✉️ [E-mail Corporativo](mailto:deividnascimento.corporativo@gmail.com)
