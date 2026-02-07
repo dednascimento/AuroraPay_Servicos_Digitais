@@ -1,4 +1,4 @@
-# Sistema de Cobrança AuroraPay 🚀
+# Sistema de E-mail para Cobrança - AuroraPay 🚀
 
 ![Badge Status](https://img.shields.io/badge/Status-Completed-success) ![Badge Python](https://img.shields.io/badge/Python-3.8%2B-blue) ![Badge License](https://img.shields.io/badge/License-MIT-green)
 
@@ -42,7 +42,7 @@ flowchart LR
 ### 1. Instalação
 ```bash
 # Clone e entre na pasta
-git clone https://github.com/seu-usuario/aurorapay.git
+git clone https://github.com/deividnf/AuroraPay_Servicos_Digitais.git
 cd aurorapay
 
 # Crie o ambiente virtual
@@ -78,13 +78,14 @@ Acesse a pasta `docs/` para detalhes técnicos:
 
 ---
 
-## ⚠️ Disclaimer & Contato
+## ⚠️ Disclaimer & Contato Profissional
 
-> **Nota de Portfólio**: Esta é uma solução de escopo simplificado, ideal para demonstração de competências técnicas e uso em pequenos negócios. Ela não substitui um ERP completo.
+> [!IMPORTANT]
+> **Nota de Portfólio**: Esta é uma solução de escopo simplificado para demonstração técnica. Ela não substitui um ERP completo.
 
-💡 **Precisa de uma solução Enterprise?**
-Se você busca um sistema de cobrança robusto, escalável e integrado a gateways de pagamento (Pix, Boleto, Cartão), entre em contato para discutirmos uma arquitetura personalizada para o seu negócio.
+### 💡 Precisa de uma solução robusta (Enterprise)?
+Se você busca um sistema de cobrança **escalável, integrado a Gateways de Pagamento (Pix API, Boleto, Cartão)** e com gestão de recorrência, entre em contato. Desenvolvo arquiteturas personalizadas sob medida para o seu negócio.
 
 **Deivid Nascimento**  
 *Arquiteto de Soluções / Desenvolvedor Sênior*  
-[LinkedIn](#) | [Email](#)
+👉 [Acesse meu LinkedIn](https://www.linkedin.com/in/dednascimento/) | ✉️ [E-mail Corporativo](mailto:deividnascimento.corporativo@gmail.com)

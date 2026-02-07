@@ -12,6 +12,15 @@
 ## 1. Objetivo
 Padronizar a execução do script de automação de cobranças, garantindo que os dados de entrada estejam corretos e que o processamento ocorra de forma segura e auditável.
 
+### 📋 Resumo Rápido (TL;DR)
+| O que fazer? | Onde/Como? |
+| :--- | :--- |
+| **Preparar Dados** | Editar `data/input/Regua_Cobranca_V2.xlsx` |
+| **Executar** | Abrir terminal e rodar `python src/main.py` |
+| **Validar** | Ver e-mails enviados e arquivo `data/output/execution_log.csv` |
+
+---
+
 ## 2. Pré-Requisitos
 1.  Python 3 instalado e configurado no PATH.
 2.  Arquivo `.env` configurado com credenciais de SMTP ativas.

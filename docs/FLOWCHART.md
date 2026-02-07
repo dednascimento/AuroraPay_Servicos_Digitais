@@ -1,67 +1,75 @@
 # Fluxograma do Processo
 
-> **Visão Geral**: Fluxo simplificado para demonstração lógica.
-
-Este documento ilustra o fluxo de dados e decisão do Sistema de Cobrança AuroraPay.
+> **Visão Geral**: Fluxo lógico detalhado da automação AuroraPay.
 
 ```mermaid
 flowchart TD
-    %% Nós de Início e Dados
-    Start([Início do Processo]) --> ReadExcel["Leitura de Dados Excel"]
-    ReadExcel --> AdapterExcel[ExcelAdapter]
-    
-    subgraph DataNormalization [Normalização de Dados]
-        AdapterExcel --> Sheets{Leitura de Abas}
-        Sheets -->|Clientes| DataCli["Dados Cadastrais"]
-        Sheets -->|Faturas| DataFat["Dados Financeiros"]
-        Sheets -->|Itens| DataItens["Detalhamento de Serviços"]
-        DataCli & DataFat & DataItens --> Merge["Merge Relacional (Invoice + Items)"]
-    end
-    
-    Merge --> InvoiceList["Lista de Faturas (Objetos)"]
-    InvoiceList --> LoopStart{Para cada Fatura}
-    
-    %% Loop de Processamento
-    subgraph ProcessingStrategy [Lógica de Cobrança]
-        LoopStart --> CalcDates["Calcular Delta de Dias"]
-        CalcDates --> CheckRule{Verificar Regra}
-        
-        CheckRule -->|Delta = -5| RuleD_5["Regra D-5: Lembrete"]
-        CheckRule -->|Delta = 0| RuleD0["Regra D0: Vencimento"]
-        CheckRule -->|Delta = 3| RuleD3["Regra D+3: Atraso"]
-        CheckRule -->|Outros| Skip[Ignorar Fatura]
-    end
-    
-    %% Validação e Segurança
-    RuleD_5 & RuleD0 & RuleD3 --> TestCheck{Modo Teste?}
-    
-    TestCheck -->|NÃO| Idempotency["Verificar Log Diário"]
-    TestCheck -->|SIM| BypassLog["Ignorar Histórico"]
-    
-    Idempotency -->|Já executado| StopAction[Abortar Ação]
-    Idempotency -->|Não executado| SendAction
-    BypassLog --> SendAction
-    
-    %% Ação de Envio
-    subgraph ActionExecution [Execução de Ação]
-        SendAction[EmailAdapter] --> TplSelect["Selecionar Template HTML"]
-        TplSelect --> GenTable["Gerar Tabela de Itens"]
-        GenTable --> ReplaceVars["Substituir Variáveis"]
-        ReplaceVars --> SMTP["Disparo SMTP (Gmail)"]
-    end
-    
-    SMTP -->|Sucesso| LogSuccess["Gravar Log: SUCCESS"]
-    SMTP -->|Falha| LogError["Gravar Log: ERROR"]
-    Skip --> LogSkip["Gravar Log: SKIPPED"]
-    StopAction --> LoopStart
-    
-    LogSuccess & LogError & LogSkip --> LoopStart
-    LoopStart -->|Fim da Lista| End([Fim do Processo])
+    %% Class Definitions
+    classDef startEnd fill:#1A237E,stroke:#0D47A1,color:#ffffff,stroke-width:2px;
+    classDef process fill:#E3F2FD,stroke:#2196F3,color:#0D47A1,stroke-width:1.5px;
+    classDef io fill:#E8F5E9,stroke:#4CAF50,color:#1B5E20,stroke-width:1.5px;
+    classDef decision fill:#FFF3E0,stroke:#FF9800,color:#E65100,stroke-width:1.5px;
+    classDef error fill:#FFEBEE,stroke:#F44336,color:#B71C1C,stroke-width:1.5px;
 
-    %% Estilização
-    style Start fill:#2ecc71,stroke:#27ae60,color:white
-    style End fill:#e74c3c,stroke:#c0392b,color:white
-    style DataNormalization fill:#e8f4fd,stroke:#3498db
-    style ProcessingStrategy fill:#fff9e6,stroke:#f1c40f
-    style ActionExecution fill:#fef9e7,stroke:#f39c12
+    %% Nodes
+    Start([Início do Processo]):::startEnd
+    End([Fim do Processo]):::startEnd
+
+    subgraph InputPhase ["1. Fase de Entrada"]
+        direction TB
+        ReadExcel["Leitura do Excel (V2)"]:::io
+        AdapterExcel["ExcelAdapter (Normalização)"]:::process
+        Sheets{Validação de Abas}:::decision
+    end
+
+    subgraph LogicPhase ["2. Fase de Inteligência (Régua)"]
+        direction TB
+        Merge["Consolidação de Dados<br/>(Cliente + Fatura + Itens)"]:::process
+        LoopStart{{Para cada Fatura ABERTA}}:::process
+        CalcDates["Cálculo de Delta (D-X)"]:::process
+        CheckRule{Regra Ativa?}:::decision
+    end
+
+    subgraph ActionPhase ["3. Fase de Execução (Email)"]
+        direction TB
+        TestCheck{Modo Teste?}:::decision
+        CheckLog["Verificação de Idempotência<br/>(Log Diário)"]:::process
+        SendEmail["EmailAdapter<br/>(HTML Dinâmico)"]:::io
+        StatusLog["Registro de Auditoria<br/>(SUCCESS / FAILED)"]:::io
+    end
+
+    %% Connections
+    Start --> ReadExcel
+    ReadExcel --> AdapterExcel
+    AdapterExcel --> Sheets
+    
+    Sheets -->|OK| Merge
+    Sheets -->|Falha| End
+    
+    Merge --> LoopStart
+    LoopStart --> CalcDates
+    CalcDates --> CheckRule
+
+    CheckRule -->|D-5 / D0 / D+3| TestCheck
+    CheckRule -->|Inativa| Skip["Ignorar"]:::process
+    Skip --> LoopStart
+
+    TestCheck -->|NÃO| CheckLog
+    TestCheck -->|SIM| SendEmail
+
+    CheckLog -->|Já Enviado| Next["Próxima Fatura"]:::process
+    CheckLog -->|Pendente| SendEmail
+
+    SendEmail -->|SMTP Gmail| StatusLog
+    StatusLog --> LoopStart
+    Next --> LoopStart
+    
+    LoopStart -.->|Fim da Lista| End
+
+    %% Notes
+    Note1["Controle de Duplicidade<br/>baseado em Fatura_ID + Regra"]:::process
+    CheckLog --- Note1
 ```
+
+---
+*Este fluxograma representa a lógica de negócio implementada na versão v2.1.*
