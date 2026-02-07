@@ -5,7 +5,7 @@
 Sistema automatizado para envio de faturas e lembretes de cobrança via e-mail, focado em pequenas empresas que utilizam planilhas para gestão financeira.
 
 ## 🎯 Objetivo do Projeto
-Este projeto foi desenvolvido como **Portfólio de Engenharia de Software**, demonstrando:
+Este projeto foi desenvolvido para **Portfólio de um Technical Product Manager | Arquiteto de Soluções**, demonstrando:
 *   Arquitetura Limpa (Clean Architecture).
 *   Automação de Processos (RPA).
 *   Documentação Técnica Padronizada.
