@@ -1,5 +1,7 @@
 # Documento de Requisitos (REQ)
 
+> **Escopo de Portfólio**: Os requisitos abaixo foram dimensionados para demonstrar capacidade de análise e implementação Full Stack/Backend. Em um cenário real, incluiriam SLA, LGPD e Integração Bancária via API.
+
 ## 1. Objetivo
 Automatizar o processo de envio de notificações de cobrança (faturas) via e-mail, garantindo pontualidade, personalização e redução da inadimplência através de uma comunicação estruturada.
 

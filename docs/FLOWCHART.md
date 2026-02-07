@@ -1,5 +1,7 @@
 # Fluxograma do Processo
 
+> **Visão Geral**: Fluxo simplificado para demonstração lógica.
+
 Este documento ilustra o fluxo de dados e decisão do Sistema de Cobrança AuroraPay.
 
 ```mermaid

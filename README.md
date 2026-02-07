@@ -1,60 +1,90 @@
 # Sistema de Cobrança AuroraPay 🚀
 
-Sistema automatizado para envio de faturas e lembretes de cobrança via e-mail.
+![Badge Status](https://img.shields.io/badge/Status-Completed-success) ![Badge Python](https://img.shields.io/badge/Python-3.8%2B-blue) ![Badge License](https://img.shields.io/badge/License-MIT-green)
 
-## Funcionalidades
-- 📧 **Envio Automático**: Dispara e-mails baseados em regras (5 dias antes, no dia, 3 dias após).
-- 🎨 **Templates HTML**: Layouts profissionais com tabelas dinâmicas de itens.
-- 📊 **Excel V2**: Suporte a múltiplas abas (Clientes, Faturas, Itens).
-- 🛡️ **Idempotência**: Garante que o mesmo e-mail não seja enviado duas vezes no mesmo dia.
-- 🧪 **Modo de Teste**: Simula envios sem afetar o histórico real.
+Sistema automatizado para envio de faturas e lembretes de cobrança via e-mail, focado em pequenas empresas que utilizam planilhas para gestão financeira.
 
-## Instalação
+## 🎯 Objetivo do Projeto
+Este projeto foi desenvolvido como **Portfólio de Engenharia de Software**, demonstrando:
+*   Arquitetura Limpa (Clean Architecture).
+*   Automação de Processos (RPA).
+*   Documentação Técnica Padronizada.
 
-1. Clone o repositório.
-2. Crie um ambiente virtual:
-   ```bash
-   python -m venv venv
-   .\venv\Scripts\activate
-   ```
-3. Instale as dependências:
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. Configure o `.env` com suas credenciais de e-mail:
-   ```env
-   SMTP_EMAIL=seu_email@gmail.com
-   SMTP_PASSWORD=senha_app_google
-   ```
+---
 
-## Como Usar
+## ⚡ Funcionalidades Principais
 
-### Execução Normal (Produção)
-Rode diariamente para processar a régua:
+| Funcionalidade | Descrição |
+| :--- | :--- |
+| 📧 **Envio Automático** | Dispara e-mails baseados em regras (5 dias antes, no dia, 3 dias após). |
+| 🎨 **Templates HTML** | Layouts profissionais com tabelas dinâmicas de itens. |
+| 📊 **Excel V2** | Suporte a múltiplas abas relacional (Clientes, Faturas, Itens). |
+| 🛡️ **Idempotência** | Garante que o mesmo e-mail não seja enviado duas vezes no mesmo dia. |
+| 🧪 **Modo de Teste** | Simula envios sem afetar o histórico real. |
+
+---
+
+## 🔄 Fluxo de Processamento
+
+```mermaid
+flowchart LR
+    Excel[Excel Input] -->|Lê Dados| Script[Python Script]
+    Script -->|Processa Regras| Logic{Decisão}
+    Logic -->|D-5 / D0 / D+3| Email[Envio SMTP]
+    Logic -->|Outros| Log[Log Local]
+```
+> *Para o fluxo técnico detalhado, consulte a documentação completa.*
+
+---
+
+## 🚀 Como Usar
+
+### 1. Instalação
 ```bash
-python src/main.py
+# Clone e entre na pasta
+git clone https://github.com/seu-usuario/aurorapay.git
+cd aurorapay
+
+# Crie o ambiente virtual
+python -m venv venv
+.\venv\Scripts\activate
+
+# Instale dependências
+pip install -r requirements.txt
 ```
 
-### Modo de Teste
-Para forçar envio e simular cenários:
-```bash
-python src/main.py --test
+### 2. Configuração
+Renomeie `.env.example` para `.env` e configure seu SMTP:
+```env
+SMTP_EMAIL=seu_email@gmail.com
+SMTP_PASSWORD=senha_app_google
 ```
 
-### Filtrar por Regra Específica
-Se quiser testar apenas um tipo de aviso:
-```bash
-python src/main.py --test --rule D-5
-python src/main.py --test --rule D0
-python src/main.py --test --rule D+3
-```
+### 3. Execução
+| Cenário | Comando |
+| :--- | :--- |
+| **Produção (Dia a Dia)** | `python src/main.py` |
+| **Simulação (Teste)** | `python src/main.py --test` |
+| **Testar Atrasados** | `python src/main.py --test --rule D+3` |
 
-## Estrutura de Dados (Excel)
-O arquivo `data/input/Regua_Cobranca_V2.xlsx` deve conter 3 abas. Para detalhes de preenchimento, consulte o [Manual Operacional (POP)](docs/POP.md).
+---
 
-## Documentação Completa
-Este projeto conta com uma documentação abrangente para desenvolvedores e usuários:
+## 📚 Documentação Completa
+Acesse a pasta `docs/` para detalhes técnicos:
 - 🏗️ **[Arquitetura do Sistema](docs/ARCHITECTURE.md)**: Visão técnica e decisões de design.
-- 🔀 **[Fluxograma](docs/FLOWCHART.md)**: Diagrama visual do processo de decisão.
+- 🔀 **[Fluxograma Detalhado](docs/FLOWCHART.md)**: Diagrama visual do processo de decisão.
 - 📋 **[Requisitos](docs/REQUIREMENTS.md)**: Lista de requisitos funcionais e não funcionais.
-- 📖 **[Manual Operacional (POP)](docs/POP.md)**: Guia passo-a-passo para execução e operação diária.
+- 📖 **[Manual Operacional (POP)](docs/POP.md)**: Guia passo-a-passo para execução e operação.
+
+---
+
+## ⚠️ Disclaimer & Contato
+
+> **Nota de Portfólio**: Esta é uma solução de escopo simplificado, ideal para demonstração de competências técnicas e uso em pequenos negócios. Ela não substitui um ERP completo.
+
+💡 **Precisa de uma solução Enterprise?**
+Se você busca um sistema de cobrança robusto, escalável e integrado a gateways de pagamento (Pix, Boleto, Cartão), entre em contato para discutirmos uma arquitetura personalizada para o seu negócio.
+
+**Deivid Nascimento**  
+*Arquiteto de Soluções / Desenvolvedor Sênior*  
+[LinkedIn](#) | [Email](#)

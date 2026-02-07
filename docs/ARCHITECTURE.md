@@ -1,5 +1,7 @@
 # Arquitetura do Sistema de Cobrança AuroraPay
 
+> **Nota**: Este documento reflete a arquitetura de uma solução de portfólio. Para ambientes enterprise, recomenda-se o uso de filas (RabbitMQ/Kafka) e microsserviços segregados.
+
 Este documento descreve a arquitetura técnica do sistema de automação de cobranças, seguindo princípios de **Clean Architecture** e **Modularidade**.
 
 ## 1. Visão Geral

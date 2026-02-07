@@ -5,6 +5,8 @@
 **Versão**: 1.0  
 **Data**: 06/02/2026
 
+> **Aviso de Uso**: Este procedimento é ilustrativo para portfólio. Em produção real, este script seria agendado via Cron/Task Scheduler ou Airflow.
+
 ---
 
 ## 1. Objetivo
